@@ -165,6 +165,7 @@ std::vector<uint16_t> parse_insts(inst_t *inst_head) {
 int main(int argc, char *argv[]) {
     if (argc != 3) {
         std::cout << "Usage: ./disarm_as <input_assembly_file> <output_assembly_file>" << std::endl;
+        return -1;
     }
     FILE* fin = fopen(argv[1], "r");
     yyin = fin;
