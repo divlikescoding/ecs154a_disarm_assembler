@@ -26,7 +26,7 @@ uint16_t parse_inst(inst_t *inst, uint16_t pc, std::map<std::string, uint16_t> s
         }
     } else if (inst->inst_type == I_TYPE_BRANCH) {
         if (symbol_table.find((char *) inst->inst_u.branch->label) == symbol_table.end()) {
-            std::cout << "Label " << inst->inst_u.branch->label << " is not defined." << std::endl;
+            std::cerr << "Label " << inst->inst_u.branch->label << " is not defined." << std::endl;
             exit(0);
         }
         uint16_t abs_address = symbol_table[(char *) inst->inst_u.branch->label];
@@ -136,7 +136,7 @@ std::vector<uint16_t> parse_insts(inst_t *inst_head) {
     for (inst_t *curr_inst = inst_head; curr_inst != nullptr; curr_inst = curr_inst->next) {
         if (curr_inst->label != nullptr) {
             if (symbol_table.find((char *) curr_inst->label) != symbol_table.end()) {
-                std::cout << "Symbol " << curr_inst->label << " already defined." 
+                std::cerr << "Symbol " << curr_inst->label << " already defined." 
                     << std::endl;
                 exit(0);
             }
@@ -144,7 +144,7 @@ std::vector<uint16_t> parse_insts(inst_t *inst_head) {
         }
         index++;
         if (index == 0) {
-            std::cout << "Instruction Memory Exceeded Limit" << std::endl;
+            std::cerr << "Instruction Memory Exceeded Limit" << std::endl;
             exit(0);
         }
     }
