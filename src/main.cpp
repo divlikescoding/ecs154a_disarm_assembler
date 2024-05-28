@@ -5,7 +5,6 @@ extern "C" {
 #include "stdio.h"
 
 #include "../lib/parser/bin/lex.yy.c"
-//#include "../lib/parser/bin/y.tab.h"
 
 #ifdef __cplusplus
 }
