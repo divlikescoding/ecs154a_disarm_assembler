@@ -1,7 +1,7 @@
 start:
-    not r3, r7
-    ADD r0, r1, r2
-    CMP r0, r1
+    NOT R3, R7
+    ADD R0, R1, R2
+    CMP R0, R1
     B start
     BEQ start
     BCS label2
@@ -23,6 +23,4 @@ label2:
     STR R0, [R1, R2]!
     STR R0, [R1], R2
     LDR R0, [R1], R2
-    NOP
-    RTI
     HALT
