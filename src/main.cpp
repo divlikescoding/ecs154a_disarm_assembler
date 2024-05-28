@@ -143,6 +143,10 @@ std::vector<uint16_t> parse_insts(inst_t *inst_head) {
             symbol_table[(char *) curr_inst->label] = index;
         }
         index++;
+        if (index == 0) {
+            std::cout << "Instruction Memory Exceeded Limit" << std::endl;
+            exit(0);
+        }
     }
 
     index = 0; 
