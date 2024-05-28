@@ -14,12 +14,6 @@ extern "C" {
 #include <iostream>
 #include <vector>
 
-typedef struct cmd_line_s {
-    std::string source_file;
-    std::string object_file;
-    bool is_list_option;
-} cmd_line_t;
-
 uint16_t parse_inst(inst_t *inst, uint16_t pc, std::map<std::string, uint16_t> symbol_table) {
     uint16_t assembled_inst;
     if (inst->inst_type == I_TYPE_NO_OPER) {
