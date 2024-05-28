@@ -24,3 +24,6 @@ The assembler has followed the ARM assembler syntax and follows exactly the mmen
 Additionally, there is an examples directory where there is an example of an assembly file that does a variety of operations.
 
 Hopefully this is helpful! Please let me know if there are any improvements or bugs!
+
+This software is available under the following licenses:
+    1. MIT
