@@ -1708,7 +1708,3 @@ yyreturnlab:
 
 #line 76 "config/rules.y"
 
-
-void yyerror(inst_t **inst_head, char *s) {
-    fprintf(stderr, "Syntax Error\n");
-}

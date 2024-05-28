@@ -8,6 +8,8 @@
         for(char *p=s; *p; p++) *p=toupper(*p);
         return s;
     }
+
+    uint32_t line_no = 1;
 %}
 
 %%
@@ -30,6 +32,10 @@
 
 [,:!\[\]] {
     return *yytext;
+}
+
+"\n" {
+    line_no++;
 }
 
 [a-zA-Z0-9]* {
@@ -144,6 +150,9 @@
 
 %%
 
+void yyerror(inst_t **inst_head, char *s) {
+    fprintf(stderr, "Line %d: Syntax Error\n", line_no);
+}
 
 int yywrap(void) {
     return 1;

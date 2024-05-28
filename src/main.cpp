@@ -161,8 +161,8 @@ std::vector<uint16_t> parse_insts(inst_t *inst_head) {
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
-        std::cout << "Usage: ./disarm_as <input_assembly_file> <output_assembly_file>" << std::endl;
-        return -1;
+        std::cerr << "Usage: ./disarm_as <input_assembly_file> <output_assembly_file>" << std::endl;
+        return 0;
     }
     FILE* fin = fopen(argv[1], "r");
     yyin = fin;
@@ -170,7 +170,10 @@ int main(int argc, char *argv[]) {
     yy_flex_debug = 0;
 
     inst_t *inst_head;
-    yyparse(&inst_head);
+    int status = yyparse(&inst_head);
+    if (status > 0) {
+        return 0;
+    }
 
     std::vector<uint16_t> encoded_insts = parse_insts(inst_head);
 

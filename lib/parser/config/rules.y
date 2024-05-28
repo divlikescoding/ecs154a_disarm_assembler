@@ -74,7 +74,3 @@ instr:
         | STR T_REG ',' '[' T_REG ']' ',' T_REG { $$ = create_mem_inst(I_MEM_STR, I_MEM_M_POST, &$2, &$5, &$8); }
 
 %%
-
-void yyerror(inst_t **inst_head, char *s) {
-    fprintf(stderr, "Syntax Error\n");
-}
