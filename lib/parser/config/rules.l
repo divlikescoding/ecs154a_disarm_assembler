@@ -76,6 +76,8 @@
         return ASR;
     } else if (0 == strcmp(yytext, "ROL")) {
         return ROL;
+    } else if (0 == strcmp(yytext, "ROR")) {
+        return ROR;
     } else if (0 == strcmp(yytext, "CMP")) {
         return CMP;
     } else if (0 == strcmp(yytext, "NOP")) {

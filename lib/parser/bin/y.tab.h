@@ -80,16 +80,17 @@ extern int yydebug;
     LSR = 273,                     /* LSR  */
     ASR = 274,                     /* ASR  */
     ROL = 275,                     /* ROL  */
-    CMP = 276,                     /* CMP  */
-    NOP = 277,                     /* NOP  */
-    RTI = 278,                     /* RTI  */
-    HALT = 279,                    /* HALT  */
-    FLAGS = 280,                   /* FLAGS  */
-    LDR = 281,                     /* LDR  */
-    STR = 282,                     /* STR  */
-    T_STR = 283,                   /* T_STR  */
-    T_REG = 284,                   /* T_REG  */
-    T_IMM = 285                    /* T_IMM  */
+    ROR = 276,                     /* ROR  */
+    CMP = 277,                     /* CMP  */
+    NOP = 278,                     /* NOP  */
+    RTI = 279,                     /* RTI  */
+    HALT = 280,                    /* HALT  */
+    FLAGS = 281,                   /* FLAGS  */
+    LDR = 282,                     /* LDR  */
+    STR = 283,                     /* STR  */
+    T_STR = 284,                   /* T_STR  */
+    T_REG = 285,                   /* T_REG  */
+    T_IMM = 286                    /* T_IMM  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -116,16 +117,17 @@ extern int yydebug;
 #define LSR 273
 #define ASR 274
 #define ROL 275
-#define CMP 276
-#define NOP 277
-#define RTI 278
-#define HALT 279
-#define FLAGS 280
-#define LDR 281
-#define STR 282
-#define T_STR 283
-#define T_REG 284
-#define T_IMM 285
+#define ROR 276
+#define CMP 277
+#define NOP 278
+#define RTI 279
+#define HALT 280
+#define FLAGS 281
+#define LDR 282
+#define STR 283
+#define T_STR 284
+#define T_REG 285
+#define T_IMM 286
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -136,7 +138,7 @@ union YYSTYPE
     token_t t_value;
     inst_t *inst_head;
 
-#line 140 "y.tab.h"
+#line 142 "y.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

@@ -9,7 +9,7 @@
     inst_t *inst_head;
 }
 
-%token B BEQ BCS MOV ADD SUB MUL MULU DIV MOD AND OR EOR NOT LSL LSR ASR ROL CMP NOP RTI HALT FLAGS LDR STR
+%token B BEQ BCS MOV ADD SUB MUL MULU DIV MOD AND OR EOR NOT LSL LSR ASR ROL ROR CMP NOP RTI HALT FLAGS LDR STR
 
 %token <t_value> T_STR T_REG T_IMM
 
@@ -62,6 +62,7 @@ instr:
         | LSR T_REG ',' T_REG ',' T_REG { $$ = create_alu_inst(I_ALU_LSR, &$2, &$4, &$6); }
         | ASR T_REG ',' T_REG ',' T_REG { $$ = create_alu_inst(I_ALU_ASR, &$2, &$4, &$6); }
         | ROL T_REG ',' T_REG ',' T_REG { $$ = create_alu_inst(I_ALU_ROL, &$2, &$4, &$6); }
+        | ROR T_REG ',' T_REG ',' T_REG { $$ = create_alu_inst(I_ALU_ROR, &$2, &$4, &$6); }
 
         | LDR T_REG ',' '[' T_REG ']' { $$ = create_mem_inst(I_MEM_LDR, I_MEM_M_OFFSET_2, &$2, &$5, NULL); }
         | LDR T_REG ',' '[' T_REG ',' T_REG ']' { $$ = create_mem_inst(I_MEM_LDR, I_MEM_M_OFFSET, &$2, &$5, &$7); }

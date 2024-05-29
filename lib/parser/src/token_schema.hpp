@@ -54,6 +54,7 @@ enum alu_inst_e {
     I_ALU_LSR,
     I_ALU_ASR,
     I_ALU_ROL,
+    I_ALU_ROR,
     I_ALU_MAX
 };
 

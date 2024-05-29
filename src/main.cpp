@@ -67,6 +67,8 @@ uint16_t parse_inst(inst_t *inst, uint16_t pc, std::map<std::string, uint16_t> s
             assembled_inst = 0xC;
         } else if (inst->inst_u.alu->inst_type == I_ALU_ROL) {
             assembled_inst = 0xD;
+        } else if (inst->inst_u.alu->inst_type == I_ALU_ROR) {
+            assembled_inst = 0xE;
         } else if (inst->inst_u.alu->inst_type == I_ALU_CMP) {
             assembled_inst = 0xF;
         } 

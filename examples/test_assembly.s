@@ -1,6 +1,7 @@
 start:
     NOT R3, R7
     ADD R0, R1, R2
+    ROR R3, R2, R1
     CMP R0, R1
     B start
     BEQ start

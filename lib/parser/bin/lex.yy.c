@@ -985,6 +985,8 @@ YY_RULE_SETUP
         return ASR;
     } else if (0 == strcmp(yytext, "ROL")) {
         return ROL;
+    } else if (0 == strcmp(yytext, "ROR")) {
+        return ROR;
     } else if (0 == strcmp(yytext, "CMP")) {
         return CMP;
     } else if (0 == strcmp(yytext, "NOP")) {
@@ -1058,10 +1060,10 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 151 "config/rules.l"
+#line 153 "config/rules.l"
 ECHO;
 	YY_BREAK
-#line 1064 "lex.yy.c"
+#line 1066 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2210,7 +2212,7 @@ void yyfree (void * ptr )
 
 /* %ok-for-header */
 
-#line 151 "config/rules.l"
+#line 153 "config/rules.l"
 
 
 void yyerror(inst_t **inst_head, char *s) {
